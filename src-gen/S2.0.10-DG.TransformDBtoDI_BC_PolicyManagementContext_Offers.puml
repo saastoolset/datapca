@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Offers' Aggregate" <<Rectangle>> {
+	class Offer <<(A,#fffab8) Aggregate Root>> {
+		int offerId
+		BigDecimal price
+		Customer client
+		List<Product> products
+	}
+}
+
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'CustomerFrontend' Aggregate" <<Rectangle>> {
+	class CustomerAddressChange <<(A,#fffab8) Aggregate Root>> {
+		UserAccount issuer
+		Address changedAddress
+	}
+}
+
+
+@enduml

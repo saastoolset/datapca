@@ -1,0 +1,24 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Contract' Aggregate" <<Rectangle>> {
+	class Contract <<(A,#fffab8) Aggregate Root>> {
+		ContractId identifier
+		Customer client
+		List<Product> products
+	}
+	class ContractId <<(V,DarkSeaGreen) Value Object>> {
+		int contractId
+	}
+	class Policy <<(E,DarkSeaGreen) Entity>> {
+		int policyNr
+		BigDecimal price
+		Contract contract
+	}
+}
+Contract --> ContractId : identifier
+Policy --> Contract : contract
+
+
+@enduml

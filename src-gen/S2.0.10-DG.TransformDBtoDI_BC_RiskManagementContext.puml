@@ -1,0 +1,22 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Risks' Aggregate" <<Rectangle>> {
+	class CustomerRiskFactor <<(A,#fffab8) Aggregate Root>> {
+		int totalRiskFactor
+		List<Risk> risks
+		Customer client
+	}
+	class Risk <<(V,DarkSeaGreen) Value Object>> {
+		int likelihood
+		String risk
+	}
+}
+CustomerRiskFactor "1" *--> "*" Risk : risks
+legend left
+  This bounded context implements the subdomain 'RiskManagementDomain'.
+end legend
+
+
+@enduml

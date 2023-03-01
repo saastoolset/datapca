@@ -1,0 +1,47 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Offers' Aggregate" <<Rectangle>> {
+	class Offer <<(A,#fffab8) Aggregate Root>> {
+		int offerId
+		BigDecimal price
+		Customer client
+		List<Product> products
+	}
+}
+package "'Products' Aggregate" <<Rectangle>> {
+	class Product <<(A,#fffab8) Aggregate Root>> {
+		String productName
+		ProductId identifier
+	}
+	class ProductId <<(V,DarkSeaGreen) Value Object>> {
+		int productId
+	}
+}
+package "'Contract' Aggregate" <<Rectangle>> {
+	class Contract <<(A,#fffab8) Aggregate Root>> {
+		ContractId identifier
+		Customer client
+		List<Product> products
+	}
+	class ContractId <<(V,DarkSeaGreen) Value Object>> {
+		int contractId
+	}
+	class Policy <<(E,DarkSeaGreen) Entity>> {
+		int policyNr
+		BigDecimal price
+		Contract contract
+	}
+}
+Product --> ProductId : identifier
+Contract --> ContractId : identifier
+Offer "1" o--> "*" Product : products
+Contract "1" o--> "*" Product : products
+Policy --> Contract : contract
+legend left
+  This bounded context implements the subdomain 'PolicyManagementDomain'.
+end legend
+
+
+@enduml

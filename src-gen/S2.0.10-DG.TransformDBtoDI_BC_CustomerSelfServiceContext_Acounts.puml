@@ -1,0 +1,13 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Acounts' Aggregate" <<Rectangle>> {
+	class UserAccount <<(A,#fffab8) Aggregate Root>> {
+		String username
+		Customer accountCustomer
+	}
+}
+
+
+@enduml

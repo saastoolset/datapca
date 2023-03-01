@@ -1,0 +1,20 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Printing' Aggregate" <<Rectangle>> {
+	class PrintingJob <<(A,#fffab8) Aggregate Root>> {
+		int printingId
+		Document document
+		Template template
+		PrintStatus printJob(PrintingId printingId)
+	}
+	class Document <<(E,DarkSeaGreen) Entity>> {
+		DomainObject source
+		String template
+	}
+}
+PrintingJob --> Document : document
+
+
+@enduml

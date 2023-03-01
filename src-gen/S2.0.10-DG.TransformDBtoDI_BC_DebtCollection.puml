@@ -1,0 +1,30 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Debts' Aggregate" <<Rectangle>> {
+	class Debt <<(A,#fffab8) Aggregate Root>> {
+		int debtNr
+		Date creationDate
+		Date paymentDate
+		Date paymentDeadline
+		BigDecimal price
+		PaymentStatus status
+		Policy policy
+		List<Dunning> dunnigs
+	}
+	class Dunning <<(E,DarkSeaGreen) Entity>> {
+		int dunningNr
+		Date dunningDate
+		Date paymentDeadline
+		Debt debt
+	}
+}
+Debt "1" *--> "*" Dunning : dunnigs
+Dunning --> Debt : debt
+legend left
+  This bounded context implements the subdomain 'DebtsDomain'.
+end legend
+
+
+@enduml

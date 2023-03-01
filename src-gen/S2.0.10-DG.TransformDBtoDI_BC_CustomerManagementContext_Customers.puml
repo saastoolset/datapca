@@ -1,0 +1,19 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Customers' Aggregate" <<Rectangle>> {
+	class Customer <<(A,#fffab8) Aggregate Root>> {
+		String firstname
+		String lastname
+		List<Address> addresses
+	}
+	class Address <<(E,DarkSeaGreen) Entity>> {
+		String street
+		String city
+	}
+}
+Customer "1" *--> "*" Address : addresses
+
+
+@enduml

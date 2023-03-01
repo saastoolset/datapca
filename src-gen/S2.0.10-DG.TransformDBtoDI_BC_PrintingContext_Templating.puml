@@ -1,0 +1,13 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Templating' Aggregate" <<Rectangle>> {
+	class Template <<(A,#fffab8) Aggregate Root>> {
+		int templateId
+		String templateName
+	}
+}
+
+
+@enduml

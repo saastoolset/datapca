@@ -1,0 +1,66 @@
+@startuml
+
+skinparam componentStyle uml2
+
+component [CustomerManagementContext]
+component [CustomerSelfServiceContext]
+note right of [CustomerSelfServiceContext]
+This context represents a web 
+application which allows the customer 
+to login and change basic data 
+records like the address. 
+end note
+component [PrintingContext]
+note right of [PrintingContext]
+An external system which provides 
+printing services to the other 
+Bounded Contexts. 
+end note
+component [PolicyManagementContext]
+note right of [PolicyManagementContext]
+This bounded context manages the 
+contracts and policies of the 
+customers. 
+end note
+component [RiskManagementContext]
+note right of [RiskManagementContext]
+Uses data from PolicyManagement 
+context to calculate risks. 
+end note
+component [DebtCollection]
+note right of [DebtCollection]
+The debt collection context is 
+responsible for the financial 
+income of the insurance company 
+(the debts) which depend on the 
+corresponding contracts and policies. 
+
+end note
+
+interface "Customer_Frontend_Backend_Relationship" as Customer_Frontend_Backend_Relationship
+[CustomerManagementContext] --> Customer_Frontend_Backend_Relationship : Supplier
+Customer_Frontend_Backend_Relationship <.. [CustomerSelfServiceContext] : Customer of Aggregate Customers 
+
+interface "SOAP" as CustomerManagementContext_to_PrintingContext
+[PrintingContext] --> CustomerManagementContext_to_PrintingContext : OPEN_HOST_SERVICE, PUBLISHED_LANGUAGE
+CustomerManagementContext_to_PrintingContext <.. [CustomerManagementContext] : use Aggregate Printing via ANTICORRUPTION_LAYER
+
+interface "SOAP" as PolicyManagementContext_to_PrintingContext
+[PrintingContext] --> PolicyManagementContext_to_PrintingContext : OPEN_HOST_SERVICE, PUBLISHED_LANGUAGE
+PolicyManagementContext_to_PrintingContext <.. [PolicyManagementContext] : use Aggregate Printing via ANTICORRUPTION_LAYER
+
+[RiskManagementContext]<-->[PolicyManagementContext] : Partnership (RabbitMQ)
+
+interface "RESTfulHTTP" as PolicyManagementContext_to_CustomerManagementContext
+[CustomerManagementContext] --> PolicyManagementContext_to_CustomerManagementContext : OPEN_HOST_SERVICE, PUBLISHED_LANGUAGE
+PolicyManagementContext_to_CustomerManagementContext <.. [PolicyManagementContext] : use Aggregate Customers as CONFORMIST
+
+interface "SOAP" as DebtCollection_to_PrintingContext
+[PrintingContext] --> DebtCollection_to_PrintingContext : OPEN_HOST_SERVICE, PUBLISHED_LANGUAGE
+DebtCollection_to_PrintingContext <.. [DebtCollection] : use Aggregate Printing via ANTICORRUPTION_LAYER
+
+[PolicyManagementContext]<-->[DebtCollection] : Shared Kernel (Shared Java Library, Communication over RESTful HTTP)
+
+
+
+@enduml

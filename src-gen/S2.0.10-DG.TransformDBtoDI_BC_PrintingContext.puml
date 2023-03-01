@@ -1,0 +1,30 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Printing' Aggregate" <<Rectangle>> {
+	class PrintingJob <<(A,#fffab8) Aggregate Root>> {
+		int printingId
+		Document document
+		Template template
+		PrintStatus printJob(PrintingId printingId)
+	}
+	class Document <<(E,DarkSeaGreen) Entity>> {
+		DomainObject source
+		String template
+	}
+}
+package "'Templating' Aggregate" <<Rectangle>> {
+	class Template <<(A,#fffab8) Aggregate Root>> {
+		int templateId
+		String templateName
+	}
+}
+PrintingJob --> Document : document
+PrintingJob --> Template : template
+legend left
+  This bounded context implements the subdomain 'PrintingDomain'.
+end legend
+
+
+@enduml

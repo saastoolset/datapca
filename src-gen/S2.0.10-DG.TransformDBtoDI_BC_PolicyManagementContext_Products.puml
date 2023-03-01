@@ -1,0 +1,17 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'Products' Aggregate" <<Rectangle>> {
+	class Product <<(A,#fffab8) Aggregate Root>> {
+		String productName
+		ProductId identifier
+	}
+	class ProductId <<(V,DarkSeaGreen) Value Object>> {
+		int productId
+	}
+}
+Product --> ProductId : identifier
+
+
+@enduml
