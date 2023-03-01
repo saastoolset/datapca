@@ -1,0 +1,20 @@
+{
+    "project_name": "datapca",
+    "project_owner": "saastoolset",
+    "package_name": "datapca",
+    "project_slug": "datapca",
+    "package_qualified_name": "datapca",
+    "package_path": "datapca",
+    "repo_url": "https://github.com/saastoolset/datapca",
+    "docs_url": "https://saastoolset.github.io/datapca",
+    "project_short_description": "Data platform utility with Python Clean Architcture",
+    "full_name": "saastoolset",
+    "email": "web.jesse@gmail.com",
+    "github_username": "saastoolset",
+    "version": "0.0.1",
+    "command_line_interface": "Click",
+    "open_source_license": "Apache-2.0",
+    "docstrings_style": "google",
+    "use_mypy": "n",
+    "install_precommit_hooks": "y"
+}

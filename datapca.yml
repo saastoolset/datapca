@@ -1,0 +1,4 @@
+name: datapca
+channels:
+  - defaults
+prefix: C:\Users\jesse\.conda\envs\datapca
