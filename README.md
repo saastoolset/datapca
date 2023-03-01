@@ -15,8 +15,8 @@ https://ealizadeh.com/blog/guide-to-python-env-pkg-dependency-using-conda-poetry
 ### Virtual environment 
 
 ```
-$ conda env create -n sqlb-pca
-$ conda activate sqlb-pca
+$ conda create -n datapca
+$ activate datapca
 
 ```
 
