@@ -3,11 +3,11 @@ ut_config = dict(
     issues=dict( 
         driver='gitlab',
         addr='https://gitlab.com/',
-        token='NkJlMV9LQXM2X3preDdVX2k1LXg=',
+        token='XX=',
         prj_id='18454432',
         
         addr2='http://gitibm.wnc.com.tw/',        
-        token2='bVlxaUJFTTlpUmVWeG1iUGVTWGg=',
+        token2='XX=',
         prj_id2='2',
         token3='mYqiBEM9iReVxmbPeSXh',
         prj_dir='C:/PROJ_DIR/1_PM/1.0_Backlog/',
