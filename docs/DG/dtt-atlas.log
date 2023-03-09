@@ -1,0 +1,29 @@
+
+quick start ???
+
+
+===
+docker run -d -p 21000:21000 --name atlas sburn/apache-atlas 
+
+admin /admin
+
+
+
+load sample data
+
+
+Run quick start to load sample model and data
+$ docker exec -ti atlas /apache-atlas/bin/quick_start.py
+
+
+Enter username for atlas :-
+Enter password for atlas :-
+
+
+=> Check Column(?)/DB(?)
+
+=========
+Data Freshness, Quality 
+
+https://ibm.box.com/s/mvlc2p561ljlijyij6yyedmn9heonpbf
+https://ibm.box.com/s/tr4orawokgbm450ix91fxl6ugunhsi3t
