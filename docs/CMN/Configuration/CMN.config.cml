@@ -1,0 +1,13 @@
+
+UserStory Filemerge_ConfigureMaintain {
+    As an "Admin" I want to "manage" an "template" so that "configuration"
+    As an "User" I want to "manage" an "IssueTracker Web" so that "logetl connect IssueTrack issue"
+}
+
+UserStory PMS_ConfigureMaintain {
+    As an "PM" I want to "manage" an "UserList" so that "logetl userlist match."
+    As an "Admin" I want to "manage" an "IssueTracker Web" so that "logetl connect IssueTrack issue"
+    As an "PM" I want to "manage" an "Stats map" so that "logetl convert IssueTrack issue status to backlog status"
+    As an "User " I want to "read" an "configuration" so that "logetl genrate backlog"
+
+}
