@@ -1,13 +1,29 @@
 
 UserStory Filemerge_ConfigureMaintain {
-    As an "Admin" I want to "manage" an "template" so that "configuration"
-    As an "User" I want to "manage" an "IssueTracker Web" so that "logetl connect IssueTrack issue"
+    As an "Admin" I want to "manage" "templates" so that "configuration"
+    As an "Admin" I want to "create" a "new template" so that "configuration"
+    As an "Admin" I want to "edit" "existing templates" so that "configuration"
+    As an "Admin" I want to "delete" "existing templates" so that "configuration"
+    As an "Admin" I want to "view" a "list of all templates" so that "configuration"
 }
 
 UserStory PMS_ConfigureMaintain {
-    As an "PM" I want to "manage" an "UserList" so that "logetl userlist match."
-    As an "Admin" I want to "manage" an "IssueTracker Web" so that "logetl connect IssueTrack issue"
-    As an "PM" I want to "manage" an "Stats map" so that "logetl convert IssueTrack issue status to backlog status"
-    As an "User " I want to "read" an "configuration" so that "logetl genrate backlog"
+    As an "PM" I want to "manage" an "map_columns_ID" so that "logetl columns match."
+    As an "PM" I want to "manage" an "map_name_ID" so that "logetl names match."
+    As an "PM" I want to "manage" an "map_stat_ID" so that "logetl status match."
+    As an "Admin" I want to "manage" an "sharepoint" so that "logetl connect sharepoint issue"
+    As an "PM" I want to "manage" an "map_columns_ID" so that "logetl convert Issues issue columns to backlog columns"
+    As an "PM" I want to "manage" an "map_name_ID" so that "logetl convert Issues issue names to backlog names"
+    As an "PM" I want to "manage" an "map_stat_ID" so that "logetl convert Issues issue status to backlog status"
+    As an "PM" I want to "manage" an "map_columns_ID" so that "logetl convert gsheet issue columns to backlog columns"
+    As an "PM" I want to "manage" an "map_name_ID" so that "logetl convert gsheet issue names to backlog names"
+    As an "PM" I want to "manage" an "map_stat_ID" so that "logetl convert gsheet issue status to backlog status"
+    As an "PM" I want to "manage" an "map_columns_ID" so that "logetl convert excel issue columns to backlog columns"
+    As an "PM" I want to "manage" an "map_name_ID" so that "logetl convert excel issue names to backlog names"
+    As an "PM" I want to "manage" an "map_stat_ID" so that "logetl convert excel issue status to backlog status"
+    As an "PM" I want to "manage" an "map_columns_ID" so that "logetl convert sharepoint issue columns to backlog columns"
+    As an "PM" I want to "manage" an "map_name_ID" so that "logetl convert sharepoint issue names to backlog names"
+    As an "PM" I want to "manage" an "map_stat_ID" so that "logetl convert sharepoint issue status to backlog status"
+    As an "User " I want to "read" an "configuration" so that "logetl generate backlog"
 
 }
